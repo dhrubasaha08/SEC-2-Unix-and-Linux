@@ -1,0 +1,24 @@
+Write a bash script to take 
+
+INPUT
+
+1	name of student, 
+2	date of birth, 
+ 	 
+4	stream - Lang/Sci/Soc,
+5	year of admission. 
+
+
+PROCESSING 
+
+Assign codes for level : 01 for UG, 02 for PG, 03 for research, faculty (01 for language, 02 - social 
+science, 03 - science, 04 - agriculture). 
+
+Make an unique enrolment id with 
+admission year-level-faculty-3-digit index number - e.g 20220102019. 
+
+
+OUTPUT
+
+Display the list as
+Enrolment id upto 6 letters of firstname.upto 6 letters of surname DoB(yyyymmdd)

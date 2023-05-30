@@ -1,0 +1,23 @@
+###     os selection menu   ###
+
+echo "Select OS Version"
+
+echo "1. Ubuntu Xenial 16.04 or Older"
+echo "2. Ubuntu Bionic 18.04 or Newer"
+
+read os
+case $os in
+
+1)
+    echo "Ubuntu Bionic 18.04 or Newer"
+    sudo add-apt-repository universe -y
+    sudo apt install guile-1.8 guile-1.8-dev -y
+    ;;
+2)
+    echo "Ubuntu Xenial 16.04 or Older"
+    sudo apt install guile-2.0 guile-2.0-dev -y
+    ;;
+*) echo "invalid option" ;;
+esac
+
+###     end of os selection menu    ###

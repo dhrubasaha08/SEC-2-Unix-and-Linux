@@ -1,0 +1,27 @@
+File/directory related
+
+1. ls
+2. cd
+3. pwd
+4. pushd
+5. popd
+6. chmod
+
+
+File content related
+
+1. head
+2. tail
+3. cat
+4. grep
+5. cut
+6. join
+7. sed
+8. egrep
+
+Redirection
+
+1. pipe |
+
+
+

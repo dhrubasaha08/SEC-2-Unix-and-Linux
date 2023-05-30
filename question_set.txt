@@ -1,0 +1,87 @@
+1. Using pipe, write a C program where the parent process has a timer of  
+10 msec. The child process reads a large file in packets of 40 bytes using 
+fread and keeps sending to the parent. The parent counts how many 40 byte 
+packets have been sent by the child process during each 10 ms interval and 
+sends the set of 10 such numbers to the child process every 100 ms. 
+The child process computes an overall average number of packet reads using the
+numbers sent by the parent. [Hint : Use non-blocking read for pipe. Use 
+poll(NULL,0,10) for running the timer of 10 ms. Include <poll.h> for poll() 
+function.]
+
+
+2. Write a C program with two threads. The first thread should read a set of 
+integers from a message queue in non-blocking mode and update an array. The 
+other thread reads the array elements and finds the numbers divisible by all 
+of 9, 12 and 15.
+
+
+3. Write a bash script to take name of student, date of birth, admission level 
+UG/PG/Res, stream - Lang/Sci/Soc, year of admission. Assign codes for level : 
+01 for UG, 02 for PG, 03 for research, faculty (01 for language, 02 - social 
+science, 03 - science, 04 - agriculture). Make an unique enrolment id with 
+admission year-level-faculty-3-digit index number - e.g 20220102019. Display the
+list as
+Enrolment id upto 6 letters of firstname.upto 6 letters of surname DoB(yyyymmdd)
+
+
+4. Write a bash script to find the names of persons in a file whose dates of 
+birth are mentioned in DD/MM/YYYY format; and convert their names to 
+Surname, First letter of first name.First letter of middle name; E.g 
+Pradosh Chandra Mitra should be made as Mitra, P.C; Byomkesh Bakshi should be 
+made as Bakshi, B.
+
+
+5. Write two different C programs which communicate between them using FIFO in 
+the following manner :
+
+a) Program 1 -> Program 2 : A coding table with symbols and codes as follows :
+A - 000
+E - 100
+I - 1010
+O - 11100
+U - 11101    
+$ - 011110 
+
+b) Program 2 : Read an arbitrary sequence of N symbols 
+(N to be taken through command-line), encode those using the codes above, 
+and send the encoded stream to Program 1.
+
+c) Program 1: Decode the encoded stream, display the sequence
+of symbols and request Program 2 for sending the next encoded sequence.
+
+d) Continue from (b) till the sequence ends with $. 
+
+6. Write a C program, from which a bash script would be called using execvp, and
+the output of the shell script should be read and interpreted. The shell script
+should extract floating point numbers of both representations like 12.2345 and 
+1.2345e+01 or 122.345e-01 from a file. The program should find the range of the
+numbers, i.e maximum - minimum. [Use unnamed pipe. Usage of popen is not 
+allowed].
+
+7. Implement problem (6) using popen. Write a bash script to run this C program 
+on multiple files and display the results.     
+
+
+8. Use message queues for implementing the following system involving multiple
+processes.
+Client processes : At starting, they send a posting to the server queue. Posting
+contains - process_id, username and their input queue name. Username and input 
+queue name are to be taken from command line. process id is to be obtained 
+through getpid() function [need to include <sys/types.h> and <unistd.h>].
+
+Server process : Updates all existing client about the posting from the new 
+client, and updates the new client about all other existing clients. New 
+clients can come up any time.
+
+The client processes can exchange messages among themselves using each others' 
+input queues. Postings from server would have higher priority than those 
+of the clients.
+
+
+9. Write a bash script to find out line counts, word count and byte counts using
+wc command (refer to the man page) for all .txt files in a folder and its 
+subfolders (can use find command to get all .txt files in a folder). It should 
+run a C program with command line arguments - the program
+should calculate average number of bytes per word and average number of words 
+per line for the text file, and display like
+text file      average bytes/word     average word/line

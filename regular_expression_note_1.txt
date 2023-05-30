@@ -1,0 +1,8 @@
+.* anything
+^ starting
+$ ending
+/W
+/b
+/w
++
+*
